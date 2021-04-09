@@ -5,6 +5,22 @@ estados_civis = {
     'viúvo':'VIÚVO(A)', 
     'divorciado':'DIVORCIADO(A)' }
 
+class Produto:
+    def __init__(self, id, nome, em_estoque):
+        self.id = id
+        self.nome = nome
+        self.em_estoque = em_estoque
+    
+def listar_produtos():
+    return [
+        Produto(42, 'Computador', True),
+        Produto(43, 'Celular', True),
+        Produto(44, 'Headphone', True),
+        Produto(44, 'Headset', False),
+        Produto(44, 'Mouse', False),
+        Produto(44, 'Teclado', False),
+    ]
+
 class Endereco:
     def __init__(self, logradouro, numero,
                  complemento):

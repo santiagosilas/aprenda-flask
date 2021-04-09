@@ -8,6 +8,45 @@
     </div>
 {% endif %}
 
+<table>
+    <tr>
+    <th>Index</th>
+    <th>Nome</th>
+    <th>Detalhes</th>
+    </tr>
+
+    {% for key in dicionario_usuarios %}
+        <tr>
+            <td>{{ dicionario_usuarios[key].id }}</td>
+            <td>{{ dicionario_usuarios[key].nome }}</td>
+            <td><a href="{{url_for('detalhes_usuario', nome = dicionario_usuarios[key].nome )}}">detalhes ...</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+<table>
+    <tr>
+    <th>Id</th>
+    <th>Nome</th>
+    <th>Em Estoque</th>
+    </tr>
+
+    {% for prod in produtos %}
+        {% if prod.em_estoque == True %}
+            <tr>
+                <td>{{ prod.id }}</td>
+                <td>{{ prod.nome }}</td>
+                <td>{{ prod.em_estoque }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+
+
+
+
 <div>
     <ul>
         {% for ling in linguagens %}
